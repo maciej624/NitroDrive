@@ -29,6 +29,9 @@ set(SOURCES
     src/Difficulty.hpp
     src/SaveSystem.cpp
     src/SaveSystem.hpp
+    src/Car.cpp
+    src/Car.hpp
+
 )
 
 add_executable(NitroDrive ${SOURCES})
