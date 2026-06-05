@@ -1,0 +1,22 @@
+# Pliki kompilacji
+build/
+*.exe
+*.dll
+*.a
+*.so
+*.obj
+*.o
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Qt
+.qmake.stash
+*.pro.user
+
+# IDE
+.vscode/
+.idea/
