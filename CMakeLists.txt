@@ -31,6 +31,9 @@ set(SOURCES
     src/SaveSystem.hpp
     src/Car.cpp
     src/Car.hpp
+    src/HUD.hpp
+    src/HUD.cpp
+
 
 )
 
