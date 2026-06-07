@@ -33,7 +33,8 @@ set(SOURCES
     src/Car.hpp
     src/HUD.hpp
     src/HUD.cpp
-
+    src/Collectible.cpp
+    src/Collectible.hpp
 
 )
 

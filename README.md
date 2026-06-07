@@ -2,7 +2,7 @@
 - [x] **v1.0.1** - Inicjalizacja projektu, SaveSystem i README.md
 - [X] **v1.0.2** - Implementacja fizyki pojazdu - 🏷️ *Milestone: v0.1-core-physics*
 - [X] **v1.0.3** - Implementacja HUD
-- [ ] **v1.0.4** - Implementacja znajdziek
+- [x] **v1.0.4** - Implementacja zbierania
 - [ ] **v1.0.5** - Implementacja garażu - 🏷️ *Milestone: v0.2-systems-ready*
 - [ ] **v1.0.6** - Mapy i generowanie toru - 🏷️ *Milestone: v0.3-world-and-ai*
 - [ ] **v1.0.7** - Boty AI
