@@ -35,7 +35,10 @@ set(SOURCES
     src/HUD.cpp
     src/Collectible.cpp
     src/Collectible.hpp
-
+    src/Garage.cpp
+    src/Garage.hpp
+    src/Map.hpp
+    src/Map.cpp
 )
 
 add_executable(NitroDrive ${SOURCES})
