@@ -5,7 +5,7 @@
 - [x] **v1.0.4** - Implementacja zbierania
 - [X] **v1.0.5** - Implementacja garażu - 🏷️ *Milestone: v0.2-systems-ready*
 - [X] **v1.0.6** - Mapy i generowanie toru - 🏷️ *Milestone: v0.3-world-and-ai*
-- [X] **v1.0.7** - Boty AI *Milestone: v1.0.7*
+- [X] **v1.0.7** - Boty AI 🏷️*Milestone: v1.0.7*
 - [ ] **v1.0.8** - Particle System
 - [ ] **v1.0.9** - Tryby gry (Circuit, Drag, TimeAttack) - 🏷️ *Milestone: v0.5-extra-modes*
 - [ ] **v1.1.0** - Integracja Game Loop i finał - 🏷️ *Milestone: v1.0-final-release*
