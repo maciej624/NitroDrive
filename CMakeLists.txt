@@ -39,6 +39,8 @@ set(SOURCES
     src/Garage.hpp
     src/Map.hpp
     src/Map.cpp
+    src/Bot.cpp
+    src/Bot.hpp
 )
 
 add_executable(NitroDrive ${SOURCES})
