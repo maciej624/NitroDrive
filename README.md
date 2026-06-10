@@ -4,7 +4,7 @@
 - [X] **v1.0.3** - Implementacja HUD
 - [x] **v1.0.4** - Implementacja zbierania
 - [X] **v1.0.5** - Implementacja garażu - 🏷️ *Milestone: v0.2-systems-ready*
-- [ ] **v1.0.6** - Mapy i generowanie toru - 🏷️ *Milestone: v0.3-world-and-ai*
+- [X] **v1.0.6** - Mapy i generowanie toru - 🏷️ *Milestone: v0.3-world-and-ai*
 - [ ] **v1.0.7** - Boty AI
 - [ ] **v1.0.8** - Particle System
 - [ ] **v1.0.9** - Tryby gry (Circuit, Drag, TimeAttack) - 🏷️ *Milestone: v0.5-extra-modes*
