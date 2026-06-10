@@ -41,6 +41,8 @@ set(SOURCES
     src/Map.cpp
     src/Bot.cpp
     src/Bot.hpp
+    src/ParticleSystem.cpp
+    src/ParticleSystem.hpp
 )
 
 add_executable(NitroDrive ${SOURCES})
