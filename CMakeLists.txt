@@ -46,6 +46,8 @@ set(SOURCES
     src/GameMode.hpp
     src/CircuitMode.cpp
     src/CircuitMode.hpp
+    src/DragMode.cpp
+    src/DragMode.hpp
 )
 
 add_executable(NitroDrive ${SOURCES})
