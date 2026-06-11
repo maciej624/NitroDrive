@@ -8,7 +8,7 @@
 * \[X] **v1.0.6** - Mapy i generowanie toru - 🏷️ *Milestone: v0.3-world-and-ai*
 * \[X] **v1.0.7** - Boty AI 🏷️*Milestone: v0.4*
 * \[x] **v1.0.8** - Particle System
-* \[ ] **v1.0.9** - Tryby gry (Circuit, Drag, TimeAttack) - 🏷️ *Milestone: v0.5-extra-modes*
+* \[X] **v1.0.9** - Tryby gry (Circuit, Drag, TimeAttack) 
 * \[ ] **v1.1.0** - Integracja Game Loop i finał - 🏷️ *Milestone: v1.0-final-release*
 
 ## Autorzy:
