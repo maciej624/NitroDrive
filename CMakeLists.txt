@@ -43,6 +43,9 @@ set(SOURCES
     src/Bot.hpp
     src/ParticleSystem.cpp
     src/ParticleSystem.hpp
+    src/GameMode.hpp
+    src/CircuitMode.cpp
+    src/CircuitMode.hpp
 )
 
 add_executable(NitroDrive ${SOURCES})
