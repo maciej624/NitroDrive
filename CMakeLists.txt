@@ -50,6 +50,8 @@ set(SOURCES
     src/DragMode.hpp
     src/TimeAttackMode.cpp
     src/TimeAttackMode.hpp
+    src/Game.cpp
+    src/Game.hpp
 )
 
 add_executable(NitroDrive ${SOURCES})
