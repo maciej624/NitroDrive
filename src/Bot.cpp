@@ -1,4 +1,3 @@
-
 // Bot.cpp — Sztuczna inteligencja bota (pojazd sterowany przez komputer)
 // Dziedziczy po Car; nadpisuje sterowanie poprzez updateAI() zamiast recznego
 // wejscia uzytkownika.
@@ -7,7 +6,7 @@
 #include <cmath>
 #include <cstdlib>
 
-// Stala PI uzywana do konwersji katow 
+// Stala PI uzywana do konwersji katow
 static const float PI = 3.14159265f;
 
 // Inicjalizuje baze Car (tekstura) i ustawia kolor nakladki odrozniajacej boty.
@@ -24,7 +23,7 @@ void Bot::setWaypoints(const std::vector<sf::Vector2f>& wps) {
     m_wpIdx = 0;  // zacznij od poczatku trasy
 }
 
-// ── setDifficulty 
+// ── setDifficulty
 // Dostosowuje parametry AI do wybranego poziomu trudnosci:
 //   EASY   — wolniejszy, wiecej odchylenia od linii toru, dlugie opoznienie zmiany biegow
 //   MEDIUM — zbalansowany
@@ -66,10 +65,10 @@ float Bot::getProgress() const {
     return (float)(m_lap * total + wpLocal);
 }
 
-// ── autoShift 
+// ── autoShift
 // Automatyczna zmiana biegow bota z opoznieniem (m_gearDelay).
 // Wyzszy bieg przy >= 90% progu; nizszy bieg przy < 50% dolnego progu.
-// Opoznienie zapobiega "dryganiu" bota przy skretach 
+// Opoznienie zapobiega "dryganiu" bota przy skretach
 void Bot::autoShift(float dt) {
     m_gearTimer += dt;
     if(m_gearTimer < m_gearDelay) return;  // jeszcze nie czas na zmiane
@@ -88,7 +87,7 @@ void Bot::autoShift(float dt) {
     }
 }
 
-// ── updateAI 
+// ── updateAI
 // Glowna funkcja AI — wywolywana co klatke zamiast recznego wejscia.
 // Algorytm:
 //   1. Wyznacz aktualny waypoint docelowy (z deterministycznym odchyleniem)
@@ -148,7 +147,7 @@ void Bot::updateAI(float dt) {
         }
     }
 
-    // ── Krok 2: Wyznacz punkt docelowy z deterministycznym szumem 
+    // ── Krok 2: Wyznacz punkt docelowy z deterministycznym szumem
     int idx = m_wpIdx % total;
     sf::Vector2f wp = m_wps[idx];
 
@@ -158,14 +157,14 @@ void Bot::updateAI(float dt) {
         wp.y += m_deviation * std::cos(devPhase * 0.53f);
     }
 
-    // ── Krok 3: Oblicz kat i uchylenie kursowe 
+    // ── Krok 3: Oblicz kat i uchylenie kursowe
     sf::Vector2f diff = wp - pos;
     float targetAngle = std::atan2(diff.y, diff.x) * 180.f / PI;
     float delta = targetAngle - m_angle;
     while(delta >  180.f) delta -= 360.f;
     while(delta < -180.f) delta += 360.f;
 
-    // ── Krok 3b: Waypoint za plecami bota (np. po kolizji) 
+    // ── Krok 3b: Waypoint za plecami bota (np. po kolizji)
     if(std::abs(delta) > 130.f && !m_isDrag) {
         m_wpIdx++;
         if(m_wpIdx % total == 0) {
@@ -177,6 +176,18 @@ void Bot::updateAI(float dt) {
                 update(dt);
                 return;
             }
+            // Znajdz najblizszy waypoint ktory jest PRZED botem (nie za nim)
+            int bestIdx = 0;
+            float bestDist = 9999.f;
+            for(int k = 1; k < total/4; k++) {
+                float d = std::hypot(m_wps[k].x - pos.x, m_wps[k].y - pos.y);
+                if(d > 150.f && d < bestDist) {
+                    bestDist = d;
+                    bestIdx  = k;
+                    break;
+                }
+            }
+            m_wpIdx = (m_wpIdx / total) * total + bestIdx;
         }
         idx = m_wpIdx % total;
         wp  = m_wps[idx];
@@ -195,7 +206,7 @@ void Bot::updateAI(float dt) {
 
     float absDelta = std::abs(delta);
 
-    // ── Krok 4: Bezposrednia korekta kata (bez fizyki skrecania) 
+    // ── Krok 4: Bezposrednia korekta kata (bez fizyki skrecania)
     // Bot obraca sie maksymalnie o maxTurn stopni na klatke
     float maxTurn = 220.f * dt;
     if(delta >  maxTurn) m_angle += maxTurn;
@@ -203,7 +214,7 @@ void Bot::updateAI(float dt) {
     else m_angle += delta;
     m_steering = 0.f;  // brak fizycznego sterowania kolami — kat jest nadpisywany
 
-    // ── Krok 5: Throttle i hamowanie zaleznie od ostrosci zakretu 
+    // ── Krok 5: Throttle i hamowanie zaleznie od ostrosci zakretu
     // Im ostrzejszy zakret, tym mniejszy gaz i ewentualne hamowanie
     float cornerFactor;
     if     (absDelta >  90.f) { cornerFactor = 0.25f; m_brake = 0.3f; }  // ostry zakret
@@ -214,11 +225,11 @@ void Bot::updateAI(float dt) {
     m_throttle  = m_speedFactor * cornerFactor;  // gaz skalowany przez trudnosc
     m_handbrake = false;
 
-    // ── Krok 6: Nitro na prostej (HARD i MEDIUM z zapasem) 
+    // ── Krok 6: Nitro na prostej (HARD i MEDIUM z zapasem)
     if(m_diff == Difficulty::HARD   && m_nitro > 35.f && absDelta < 10.f) activateNitro();
     if(m_diff == Difficulty::MEDIUM && m_nitro > 55.f && absDelta <  8.f) activateNitro();
 
-    // ── Krok 7: Zmiana biegow i aktualizacja fizyki (Car::update) 
+    // ── Krok 7: Zmiana biegow i aktualizacja fizyki (Car::update)
     autoShift(dt);
     update(dt);  // wywoluje bazowa fizyke z Car::update
 }
