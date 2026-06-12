@@ -1,7 +1,7 @@
 # 🏎️ Nitro Drive
 
 ### 2D wyścigówka top-down napisana w C++ i SFML
-
+### prezentacja graficzna gry - https://youtu.be/YbI73RvENk8
 ---
 
 ## 👨‍🚀 Autorzy
