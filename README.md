@@ -154,8 +154,8 @@ Za monety zebrane na trasie można w garażu rozwijać pojazd w pięciu kategori
 | `v1.0.3` | Implementacja HUD (prędkościomierz, nitro, czas, pozycja) | — |
 | `v1.0.4` | Implementacja zbieranek (monety, nitro, respawn) | — |
 | `v1.0.5` | Implementacja garażu (ulepszenia, skiny, system kosztów) | 🏷️ `v0.2-systems-ready` |
-| `v1.0.6` | Mapy i generowanie toru (Drag, Circuit) | 🏷️ `v0.3-world-and-ai`  |
-| `v1.0.7` | Boty AI — jazda po waypointach, poziomy trudności | — |
+| `v1.0.6` | Mapy i generowanie toru (Drag, Circuit) | 🏷️ `v0.3-world`  |
+| `v1.0.7` | Boty AI — jazda po waypointach, poziomy trudności |  🏷️ `v0.4-ai-implementation` |
 | `v1.0.8` | Particle System (dym z opon, spaliny, nitro, iskry, zbieranie monet) | - |
 | `v1.0.9` | Tryby gry: Circuit, Drag, Time Attack |  |
 | `v1.1.0` | Integracja Game Loop, menu, ekran wyników, rekordy — finalna wersja | 🏷️ `v1.0-final-release` |
